@@ -23,11 +23,6 @@ from sqlalchemy.sql import func, expression
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True)
-    role_id = Column(
-        Integer,
-        ForeignKey("roles.id", name="fk_users_roles", ondelete="CASCADE"),
-        nullable=False,
-    )
     name = Column(String(200), unique=False, nullable=False)
     email = Column(String(200), unique=True, nullable=False)
     failed_login_streak = Column(Integer, server_default="0")
@@ -38,4 +33,3 @@ class User(Base):
     )
     is_deleted = Column(BOOLEAN, nullable=False, server_default=expression.false())
     created_timestamp = Column(DateTime(timezone=True), server_default=func.now())
-    pii_key_id = Column(Integer, index=True, nullable=False, server_default="0")

@@ -29,4 +29,4 @@ class AppSettings(BaseSettings):
         env_file = os.path.join(os.path.dirname(__file__), '.env')
 
 
-app_settings  = AppSettings()
+app_settings = AppSettings()

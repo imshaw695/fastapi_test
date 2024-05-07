@@ -1,18 +1,18 @@
 import os
 import platform
 import socket
-import sys
+# import sys
 from config import app_settings
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from pathlib import Path
+# from pathlib import Path
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
 from starlette.middleware.cors import CORSMiddleware
 
 # Append the parent directory of website/ to sys.path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+# sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 DATABASE_URL = (
     f"postgresql+asyncpg://{app_settings.DB_USERNAME}:{app_settings.database_password}"
@@ -30,7 +30,9 @@ db = create_async_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=db, class_=AsyncSession)
 
 # Base class for models
+print("before base")
 Base = declarative_base()
+print("after base")
 
 # create the holder for site config stuff
 site_config = {}
