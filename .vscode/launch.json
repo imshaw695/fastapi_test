@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: FastAPI",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "back_end.wsgi:app", // Adjusted path to reflect the location of wsgi.py
+        "--reload",
+        "--host", "0.0.0.0", // Optionally specify the host
+        "--port", "8000" // Optionally specify the port
+      ],
+      "jinja": true,
+      "cwd": "${workspaceFolder}", // Ensure cwd points to the root folder where back_end is located
+      "console": "integratedTerminal" // Runs Uvicorn in the integrated terminal
+    }
+  ]
+}

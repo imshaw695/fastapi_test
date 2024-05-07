@@ -41,3 +41,7 @@ To get started with this project, follow these steps:
 ## init
 
 - Many changes need to be done, as we do not have a lot of the flask libraries that did a lot of the manual work for us. Use this repos __init__.py and config.py as a reference to convert a flask init file.
+
+## wsgi
+
+- keeping the name wsgi is sort of wrong, as fastapi uses ASGI servers like uvicorn, however for now I have kept the filename and adjusted it accordingly
