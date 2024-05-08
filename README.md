@@ -29,7 +29,6 @@ To get started with this project, follow these steps:
 
 - FastAPI does not include:
   - An equivalent to flask-migrate, just alembic
-  - We need to add the db connection string to the alembic env.py
   - An equivalent to Flask-SQLAlchemy, so we need to do it manually.
 
 ## Alembic
