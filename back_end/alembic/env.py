@@ -40,10 +40,10 @@ target_metadata = Base.metadata
 # ... etc.
 
 DB_USERNAME = os.environ.get('DB_USERNAME')
-database_password = os.environ.get('database_password')
-database_url = os.environ.get('database_url')
-database_port = os.environ.get('database_port')
-database = os.environ.get('database')
+database_password = os.environ.get('DB_PASSWORD')
+database_url = os.environ.get('DB_URL')
+database_port = os.environ.get('DB_PORT')
+database = os.environ.get('DB_NAME')
 
 SQLALCHEMY_DATABASE_URI = (
     "postgresql://"

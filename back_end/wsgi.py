@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from website import create_app
+from back_end.website import create_app
 
 # Load environment variables
 this_directory = os.path.abspath(os.path.dirname(__file__))

@@ -2,7 +2,7 @@ import os
 import platform
 import socket
 # import sys
-from config import app_settings
+from back_end.config import app_settings
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
@@ -15,8 +15,8 @@ from starlette.middleware.cors import CORSMiddleware
 # sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 DATABASE_URL = (
-    f"postgresql+asyncpg://{app_settings.DB_USERNAME}:{app_settings.database_password}"
-    f"@{app_settings.database_url}:{app_settings.database_port}/{app_settings.database}"
+    f"postgresql+asyncpg://{app_settings.DB_USERNAME}:{app_settings.DB_PASSWORD}"
+    f"@{app_settings.DB_URL}:{app_settings.DB_PORT}/{app_settings.DB_NAME}"
 )
 
 
@@ -62,7 +62,7 @@ def create_app() -> FastAPI:
     static_files_path = os.path.join(this_directory, "templates", "static", "assets")
     app.mount("/static", StaticFiles(directory=static_files_path), name="static")
     print("Static files directory:", static_files_path)
-    from website.frontend import routes as frontend
+    from back_end.website.frontend import routes as frontend
 
     app.include_router(frontend.router)
 
