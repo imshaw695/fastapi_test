@@ -44,3 +44,10 @@ To get started with this project, follow these steps:
 ## wsgi
 
 - keeping the name wsgi is sort of wrong, as fastapi uses ASGI servers like uvicorn, however for now I have kept the filename and adjusted it accordingly
+
+
+## google cloud run
+
+- go to google cloud run and select to connect the repo
+- you need to setup some API's and authenticate your github, you are guided at the top of the cloud run page.
+- I selected to use a dockerfile to build it, as that seemed easier.

@@ -2,7 +2,7 @@ import os
 import platform
 import socket
 # import sys
-from back_end.config import app_settings
+from config import app_settings
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
@@ -62,7 +62,7 @@ def create_app() -> FastAPI:
     static_files_path = os.path.join(this_directory, "templates", "static", "assets")
     app.mount("/static", StaticFiles(directory=static_files_path), name="static")
     print("Static files directory:", static_files_path)
-    from back_end.website.frontend import routes as frontend
+    from website.frontend import routes as frontend
 
     app.include_router(frontend.router)
 

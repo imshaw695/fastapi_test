@@ -15,7 +15,7 @@ type: alembic upgrade head
 The database is now updated to reflect this model file
 """
 
-from website import Base
+from back_end.website import Base
 from sqlalchemy import Column, Integer, String, ForeignKey, BOOLEAN, DateTime
 from sqlalchemy.sql import func, expression
 
